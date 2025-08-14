@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "visual-layer": {
+            "command": "/Users/Jack/Documents/vl-mcp/venv/bin/python",
+            "args": [
+                "/Users/Jack/Documents/vl-mcp/mcp-server/mcp_server/server.py"
+            ],
+            "cwd": "/Users/Jack/Documents/vl-mcp/mcp-server/mcp_server",
+            "env": {
+                "VISUAL_LAYER_API_KEY": "${VISUAL_LAYER_API_KEY}",
+                "VISUAL_LAYER_API_SECRET": "${VISUAL_LAYER_API_SECRET}"
+            }
+        }
+    }
+}
