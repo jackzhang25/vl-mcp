@@ -18,11 +18,13 @@ requirements_path = Path(__file__).parent / "requirements.txt"
 requirements = []
 if requirements_path.exists():
     with open(requirements_path, "r", encoding="utf-8") as f:
-        requirements = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+        requirements = [
+            line.strip() for line in f if line.strip() and not line.startswith("#")
+        ]
 
 setup(
     name="visual-layer-mcp-server",
-    version="1.0.0",
+    version="1.0.2,
     author="Visual Layer",
     author_email="support@visual-layer.com",
     description="MCP Server for Visual Layer SDK",

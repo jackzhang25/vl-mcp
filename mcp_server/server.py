@@ -263,6 +263,11 @@ Status: {dataset.get('status', 'N/A')}
         return f"Error searching datasets by labels: {str(e)}"
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the MCP server."""
     # Initialize and run the server
     mcp.run(transport="stdio")
+
+
+if __name__ == "__main__":
+    main()

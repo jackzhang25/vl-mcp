@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "visual-layer-mcp-server"
-version = "1.0.0"
+version = "1.0.2"
 description = "MCP Server for Visual Layer SDK"
 readme = "README.md"
 license = {text = "MIT"}
@@ -21,19 +21,20 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = [
     "requests>=2.31.0",
     "pathlib>=1.0.1",
     "python-dotenv>=1.0.0",
     "PyJWT>=2.8.0",
     "pandas>=2.2.0",
-    "mcp>=1.0.0",
+    "mcp>=1.12.4",
+    "fastmcp>=2.11.3",
     "visual-layer-sdk",
 ]
 
@@ -56,7 +57,7 @@ Documentation = "https://docs.visual-layer.com"
 Repository = "https://github.com/visual-layer/vl-sdk"
 Issues = "https://github.com/visual-layer/vl-sdk/issues"
 
-[tool.setuptools]
+[tool.hatch.build.targets.wheel]
 packages = ["mcp_server"]
 
 [tool.black]
@@ -89,4 +90,17 @@ python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
 addopts = "-v --tb=short"
-asyncio_mode = "auto" 
+asyncio_mode = "auto"
+
+[tool.uv]
+dev-dependencies = [
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "typeguard",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+extra-index-url = ["https://test.pypi.org/simple"]
+
+ 
